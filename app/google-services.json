@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "804393176581",
+    "project_id": "clothinghouse-5b832",
+    "storage_bucket": "clothinghouse-5b832.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804393176581:android:4f7feda5b5dcfa4db5566c",
+        "android_client_info": {
+          "package_name": "com.example.clothinghouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804393176581-imu8f03n4t7gufk9cbkbsfd75j44advl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFx7LErX1PzNH5hFzKNdh8Pp7NlOwm3q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804393176581-imu8f03n4t7gufk9cbkbsfd75j44advl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
