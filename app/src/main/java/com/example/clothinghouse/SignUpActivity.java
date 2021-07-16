@@ -29,6 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         user = FirebaseAuth.getInstance();
 //        text under SignUp Button
+        login = findViewById(R.id.btnLogin);
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -37,7 +38,6 @@ public class SignUpActivity extends AppCompatActivity {
                 finish();
             }
         });
-
         signUp_button = findViewById(R.id.btnSignUp);
         signUp_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,6 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
-
     private void signUpUser(){
         user_email = findViewById(R.id.etEmailAddress);
         user_password = findViewById(R.id.etPassword);
@@ -54,22 +53,17 @@ public class SignUpActivity extends AppCompatActivity {
         email = user_email.getText().toString();
         password = user_password.getText().toString();
         confirm_password = user_confirm_password.getText().toString();
-
         if (email.isEmpty() || password.isEmpty() || confirm_password.isEmpty())
         {
             Toast.makeText(SignUpActivity.this, "Email and Password can't be empty", Toast.LENGTH_SHORT).show();
             return;
         }
-
-
         if (!password.equals(confirm_password)){
             Log.d("mahnoor",password);
             Log.d("mahnoor",confirm_password);
             Toast.makeText(SignUpActivity.this, "Password do not match", Toast.LENGTH_SHORT).show();
             return;
-
         }
-
         user.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull @org.jetbrains.annotations.NotNull Task<AuthResult> task) {
@@ -79,7 +73,6 @@ public class SignUpActivity extends AppCompatActivity {
                     Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-
                     Log.d("mahnoor", "createUserWithEmail:success");
                 } else {
                     // If sign in fails, display a message to the user.
@@ -87,11 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.makeText(SignUpActivity.this, "Authentication failed.",
                             Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
-
-
     }
 }
